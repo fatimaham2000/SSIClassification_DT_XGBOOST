@@ -11,7 +11,7 @@ from sklearn.metrics import accuracy_score,recall_score,precision_score,f1_score
 # Decision Tree Feature Selection
 def feature_selection():
 
-       df = pd.read_csv('databases/SSISampledAfterKNNImputation.csv')
+       df = pd.read_csv('SSISampledAfterKNNImputation.csv')
        df.drop(columns=df.columns[0], axis=1, inplace=True)
        X = df.drop(columns='SSI', axis=1)
        Y = df['SSI']
@@ -46,7 +46,7 @@ def train_XG(train_X, val_X, train_y, val_y):
        from sklearn.metrics import confusion_matrix
        print('Confusion Matrix : \n' + str(confusion_matrix(val_y,y_pred)))
 def main():
-       df = pd.read_csv('databases/SSISampledAfterKNNImputation.csv')
+       df = pd.read_csv('SSISampledAfterKNNImputation.csv')
        df.drop(columns=df.columns[0], axis=1, inplace=True)
        X = df.drop(columns='SSI', axis=1)
        Y = df['SSI']
